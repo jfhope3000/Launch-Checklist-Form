@@ -19,13 +19,20 @@ window.addEventListener("load", function () {
    });
 });
 
+{/* <p id="description">
+This will be turned blue.
+</p>
+<script>
+let paragraph = document.getElementById("description");
+console.log("paragraph contents:", paragraph.innerHTML.trim()); */}
 
-let liPilot = document.getElementById("pilotName");
-console.log("Pilot ", liPilot.innerHTML.trim(), "Ready for Launch");
-let liCopilot = document.getElementById("copilotName");
-console.log("Pilot ", liCopilot.innerHTML.trim(), "Ready for Launch");
-let liFuelStatus = document.getElementById("fuelStatus");
-   
+let liPilot = document.getElementById("pilotStatus");
+         console.log(liPilot.innerHTML);
+// console.log("Pilot ", liPilot.innerHTML.trim());
+// let liCopilot = document.getElementById("copilotName");
+// console.log("Pilot ", liCopilot.innerHTML.trim(), "Ready for Launch");
+// let liFuelStatus = document.getElementById("fuelStatus");
+
 
 // pilotName
 // copilotName
