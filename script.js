@@ -26,8 +26,16 @@ This will be turned blue.
 let paragraph = document.getElementById("description");
 console.log("paragraph contents:", paragraph.innerHTML.trim()); */}
 
-let liPilot = document.getElementById("pilotStatus");
-         console.log(liPilot.innerHTML);
+//let liPilot = document.getElementById("pilotStatus");
+//         console.log(liPilot.innerHTML);
+
+function myFunction() {
+document.getElementsByTagName('h1').style.color = "red"; }
+// domTest.style.color = "red"; 
+
+// let faultyItems = document.getElementById('faultyItems');
+// faultyItems.style.visibility = 'visible';  
+         // console.log(faultyItems.style.visibility);      
 // console.log("Pilot ", liPilot.innerHTML.trim());
 // let liCopilot = document.getElementById("copilotName");
 // console.log("Pilot ", liCopilot.innerHTML.trim(), "Ready for Launch");
