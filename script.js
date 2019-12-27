@@ -1,10 +1,9 @@
 // Write your JavaScript code here!
-// preventDefault();
+ preventDefault();
 
 window.addEventListener("load", function () {
    let form = document.querySelector("launchForm");
    launchForm.addEventListener("submit", function (event) {
-      faultyItems.style.visibility = 'visible';
       let pilotInput = document.querySelector("input[name=pilotName]");
       let copilotInput = document.querySelector("input[name=copilotName]");
       let fuelInput = document.querySelector("input[name=fuelLevel]");
@@ -18,10 +17,6 @@ window.addEventListener("load", function () {
          // stop the form submission   
       } 
       
-      let pilotFinal = li.getElementID("pilotStatus").innerHTML += `Pilot ${pilotInput} is ready for launch.`;
-      
-      pilotFinal.style.color = "blue";
-      launchStatus.innerHTML.trim = 'Shuttle Not Ready to Launch';
    
       // if (fuelInput.value < 10000) {
       //    let fuelStatus = document.getElementById("fuelStatus");
@@ -36,11 +31,14 @@ window.addEventListener("load", function () {
       //    fuelStatus.style.visibility = 'visible';
       // }
       
-   });
-      
-    
-   // let faultyItems = document.getElementById('faultyItems');
-   // faultyItems.style.visibility = 'visible';
+   }); 
+   let faultyItems = document.getElementById('faultyItems');
+      faultyItems.style.visibility = 'visible';
+      // let pilotFinal = li.getElementID("pilotStatus").innerHTML += `Pilot ${pilotInput} is ready for launch.`;
+      // faultyItems.style.visibility = 'visible';
+      // launchStatus.innerHTML.trim = 'Shuttle Not Ready to Launch';
+
+ 
    // let fuelTest = document.getElementById('fuelInput.value');
   // fuelInput.value = Number(fuelInput.value);
   
