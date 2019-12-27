@@ -4,43 +4,47 @@
 window.addEventListener("load", function () {
    let form = document.querySelector("launchForm");
    launchForm.addEventListener("submit", function (event) {
+      faultyItems.style.visibility = 'visible';
       let pilotInput = document.querySelector("input[name=pilotName]");
       let copilotInput = document.querySelector("input[name=copilotName]");
       let fuelInput = document.querySelector("input[name=fuelLevel]");
       let cargoInput = document.querySelector("input[name=cargoMass]");
-      if (pilotInput.value === "" || copilotInput.value === "" || fuelInput.value === "" ||cargoInput.value === "") {
+      if (pilotInput.value === "" || copilotInput.value === "" || fuelInput.value === "" || cargoInput.value === "") {
          alert("All fields are required!");
          // stop the form submission   
          event.preventDefault();
       } else if (isNaN(fuelInput.value) === true || isNaN(cargoInput.value) === true) {
-         alert("Fuel Level and CargoM Mass must be numbers!");
+         alert("Fuel Level and Cargo Mass must be numbers!");
          // stop the form submission   
-      }
+      } 
+      
+      let pilotFinal = li.getElementID("pilotStatus").innerHTML += `Pilot ${pilotInput} is ready for launch.`;
+      
+      pilotFinal.style.color = "blue";
+      launchStatus.innerHTML.trim = 'Shuttle Not Ready to Launch';
+   
+      // if (fuelInput.value < 10000) {
+      //    let fuelStatus = document.getElementById("fuelStatus");
+      //    console.log("paragraph contents:", fuelStatus.innerHTML.trim());
+      //    fuelStatus.style.color = "blue";
+      //    fuelStatus.style.visibility = 'visible';
+
+      //    // fuelStatus.innerHTML.trim = 'Fuel level too low for launch';
+      //    // launchStatus.innerHTML.trim = 'Shuttle Not Ready to Launch';
+
+      // } else {
+      //    fuelStatus.style.visibility = 'visible';
+      // }
+      
    });
+      
+    
+   // let faultyItems = document.getElementById('faultyItems');
+   // faultyItems.style.visibility = 'visible';
+   // let fuelTest = document.getElementById('fuelInput.value');
+  // fuelInput.value = Number(fuelInput.value);
+  
 });
-
-{/* <p id="description">
-This will be turned blue.
-</p>
-<script>
-let paragraph = document.getElementById("description");
-console.log("paragraph contents:", paragraph.innerHTML.trim()); */}
-
-//let liPilot = document.getElementById("pilotStatus");
-//         console.log(liPilot.innerHTML);
-
-function myFunction() {
-document.getElementsByTagName('h1').style.color = "red"; }
-// domTest.style.color = "red"; 
-
-// let faultyItems = document.getElementById('faultyItems');
-// faultyItems.style.visibility = 'visible';  
-         // console.log(faultyItems.style.visibility);      
-// console.log("Pilot ", liPilot.innerHTML.trim());
-// let liCopilot = document.getElementById("copilotName");
-// console.log("Pilot ", liCopilot.innerHTML.trim(), "Ready for Launch");
-// let liFuelStatus = document.getElementById("fuelStatus");
-
 
 // pilotName
 // copilotName
