@@ -1,9 +1,10 @@
 // Write your JavaScript code here!
- preventDefault();
+
 
 window.addEventListener("load", function () {
    let form = document.querySelector("launchForm");
    launchForm.addEventListener("submit", function (event) {
+      preventDefault();
       let pilotInput = document.querySelector("input[name=pilotName]");
       let copilotInput = document.querySelector("input[name=copilotName]");
       let fuelInput = document.querySelector("input[name=fuelLevel]");
@@ -15,9 +16,12 @@ window.addEventListener("load", function () {
       } else if (isNaN(fuelInput.value) === true || isNaN(cargoInput.value) === true) {
          alert("Fuel Level and Cargo Mass must be numbers!");
          // stop the form submission   
-      } 
-      
-   
+      }
+      console.log(pilotInput);
+
+      // pilotStatus.innerHTML = `${pilotInput.value}`;
+      // pilotStatus.innerHTML = `Pilot ${pilotInput} is ready for launch`;
+
       // if (fuelInput.value < 10000) {
       //    let fuelStatus = document.getElementById("fuelStatus");
       //    console.log("paragraph contents:", fuelStatus.innerHTML.trim());
@@ -30,18 +34,23 @@ window.addEventListener("load", function () {
       // } else {
       //    fuelStatus.style.visibility = 'visible';
       // }
-      
-   }); 
-   let faultyItems = document.getElementById('faultyItems');
-      faultyItems.style.visibility = 'visible';
-      // let pilotFinal = li.getElementID("pilotStatus").innerHTML += `Pilot ${pilotInput} is ready for launch.`;
-      // faultyItems.style.visibility = 'visible';
-      // launchStatus.innerHTML.trim = 'Shuttle Not Ready to Launch';
 
- 
+   });
+   let pilotStatus = document.getElementById('pilotStatus');
+   pilotStatus.style.visibility = 'visible';
+   pilotStatus.innerHTML = (pilotInput.value);
+
+   // let faultyItems = document.getElementById('faultyItems');
+   //    faultyItems.style.visibility = 'visible';
+
+   // let pilotFinal = li.getElementID("pilotStatus").innerHTML += `Pilot ${pilotInput} is ready for launch.`;
+   // faultyItems.style.visibility = 'visible';
+   //  launchStatus.innerHTML.trim = 'Shuttle Not Ready to Launch';
+
+
    // let fuelTest = document.getElementById('fuelInput.value');
-  // fuelInput.value = Number(fuelInput.value);
-  
+   // fuelInput.value = Number(fuelInput.value);
+
 });
 
 // pilotName
