@@ -54,19 +54,21 @@ window.addEventListener("load", function () {
 window.addEventListener("load", function () {
    fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
       response.json().then(function (json) {
-         const div = document.getElementById("weather-missionTarget");
+         const div = document.getElementById("missionTarget");
+         let index = 0;
          // Add HTML that includes the JSON data
          div.innerHTML = `
             <h2>Mission Destination</h2>
             <ol>
-               <li>Name: ${json.name}</li>
-               <li>Diameter: ${json.diameter}</li>
-               <li>Star: ${json.star}</li>
-               <li>Distance from Earth: ${json.distance}</li>
-               <li>Number of Moons: ${json.moons}</li>
+               <li>Name: ${json[index].name}</li>
+               <li>Diameter: ${json[index].diameter}</li>
+               <li>Star: ${json[index].star}</li>
+               <li>Distance from Earth: ${json[index].distance}</li>
+               <li>Number of Moons: ${json[index].moons}</li>
             </ol>
-            <img src="${json.image}">
+            <img src="${json[index].image}">
             `;
+            index = (index + 1) % json.length;
       });
    });
 });
