@@ -45,45 +45,31 @@ window.addEventListener("load", function () {
             launchStatus.style.color = 'rebeccapurple';
          }
       }
-
-
-
-      // if (fuelInput.value < 10000) {
-      //    fuelStatus.innerHTML = "Fuel level too low for launch";
-      //    launchStatus.innerHTML = "Shuttle Not Ready for Launch";
-      //    launchStatus.style.color = 'red';
-      // } else {
-      //    fuelStatus.innerHTML = "Fuel level high enough for launch";
-      //    // stop the form submission   
-      // }
-      // let cargoStatus = document.getElementById("cargoStatus");
-      // if (cargoInput.value > 10000) {
-      //    cargoStatus.innerHTML = "Cargo level too high for launch";
-      //    launchStatus.innerHTML = "Shuttle Not Ready for Launch";
-      //    launchStatus.style.color = 'red';
-      // } else {
-      //    cargoStatus.innerHTML = "Cargo level low enough for launch";
-      // }
    });
 });
 
-// pilotName
-// copilotName
-// fuelStatus
-// cargoStatus
-// fuelStatus
-// cargoStatus
 
-//  ${name} 
+/* This block of code shows how to format the HTML once you fetch some planetary JSON! */
 
-/* This block of code shows how to format the HTML once you fetch some planetary JSON!
-<h2>Mission Destination</h2>
-<ol>
-   <li>Name: ${}</li>
-   <li>Diameter: ${}</li>
-   <li>Star: ${}</li>
-   <li>Distance from Earth: ${}</li>
-   <li>Number of Moons: ${}</li>
-</ol>
-<img src="${}">
-*/
+window.addEventListener("load", function () {
+   fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
+      response.json().then(function (json) {
+         const div = document.getElementById("weather-missionTarget");
+         // Add HTML that includes the JSON data
+         div.innerHTML = `
+            <h2>Mission Destination</h2>
+            <ol>
+               <li>Name: ${json.name}</li>
+               <li>Diameter: ${json.diameter}</li>
+               <li>Star: ${json.star}</li>
+               <li>Distance from Earth: ${json.distance}</li>
+               <li>Number of Moons: ${json.moons}</li>
+            </ol>
+            <img src="${json.image}">
+            `;
+      });
+   });
+});
+
+
+
