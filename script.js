@@ -55,7 +55,7 @@ window.addEventListener("load", function () {
    fetch("https://handlers.education.launchcode.org/static/planets.json").then(function (response) {
       response.json().then(function (json) {
          const div = document.getElementById("missionTarget");
-         let index = 0;
+         let index = Math.floor(Math.random()*6);
          // Add HTML that includes the JSON data
          div.innerHTML = `
             <h2>Mission Destination</h2>
@@ -68,7 +68,6 @@ window.addEventListener("load", function () {
             </ol>
             <img src="${json[index].image}">
             `;
-            index = (index + 1) % json.length;
       });
    });
 });
