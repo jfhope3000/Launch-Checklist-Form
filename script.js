@@ -17,6 +17,12 @@ window.addEventListener("load", function () {
          alert("Fuel Level and Cargo Mass must be numbers!");
          // stop the form submission
          event.preventDefault();
+
+      } else if (isNaN(pilotInput.value) !== true || isNaN(copilotInput.value) !== true) {
+         alert("The Pilot and Copilot can not be numbers!");
+         // stop the form submission
+         event.preventDefault();
+
       } else {
          let faultyItems = document.querySelector("#faultyItems");
          let launchStatus = document.querySelector("#launchStatus");
